@@ -3,13 +3,13 @@
 #include "order.hpp"
 
 struct PriceLevel {
-    int price;
+    int price = 0;
 
     Order* head = nullptr;
     Order* tail = nullptr;
 };
 
-void appand_order(PriceLevel& level, Order* order) {
+inline void appand_order(PriceLevel& level, Order* order) {
     order->prev = nullptr;
     order->next = nullptr;
 
@@ -25,7 +25,7 @@ void appand_order(PriceLevel& level, Order* order) {
     level.tail = order;
 }
 
-void remove_order(PriceLevel& level, Order* order) {
+inline void remove_order(PriceLevel& level, Order* order) {
     if (level.head == order) {
         level.head = order->next;
     }

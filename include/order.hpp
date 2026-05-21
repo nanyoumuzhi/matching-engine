@@ -3,13 +3,13 @@
 #include <cstdint>
 
 struct Order {
-    uint64_t order_id;
+    uint64_t order_id = 0;
 
-    bool is_buy;
+    bool is_buy = true;
 
-    int price;
-    int quantity;
+    int price = 0;
+    int quantity = 0;
 
-    Order* next;
-    Order* prev;
+    Order* next = nullptr;
+    Order* prev = nullptr;
 };
